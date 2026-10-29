@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171b1b">
+  <title>THE WHITE ROOM | An Escape Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="branding"><span class="eyebrow">THE CURIOUS CASE / AN INTERACTIVE MYSTERY</span><h1>The White Room</h1></div>
+      <div class="header-actions">
+        <span id="progress" class="progress" aria-live="polite">0 / 3 puzzles</span>
+        <button id="musicToggle" class="text-button" aria-label="Toggle background music">♫ Music: Off</button>
+        <button id="restart" class="text-button" title="Erase saved progress and restart">↻ Restart</button>
+      </div>
+    </header>
+
+    <section id="gameShell" class="game-shell" aria-label="Escape room game">
+      <div class="game-canvas" id="gameCanvas">
+        <img class="room-background" id="roomBackground" src="assets/images/Room.png" alt="Minimal white room with perspective walls" draggable="false">
+        <div class="scene-tint" aria-hidden="true"></div>
+        <div id="sceneObjects" class="scene-objects"></div>
+        <div id="sceneName" class="scene-name">01 / THE CABINET</div>
+        <div id="sceneInfo" class="scene-info"></div>
+        <div id="ending" class="ending" hidden>
+          <video id="endingVideo" playsinline muted loop preload="none" poster="" aria-label="A moon reflected in a pond">
+            <source src="assets/media/Moon.mp4" type="video/mp4">
+          </video>
+          <div class="moon-fallback" id="moonFallback" aria-hidden="true"><div class="moon-disc"></div><div class="water-glow"></div></div>
+          <div class="ending-caption" id="endingCaption">The moon waits on both sides of the water.</div>
+          <button class="ending-restart" id="endingRestart">Begin again</button>
+        </div>
+      </div>
+      <div class="navigation">
+        <button id="turnLeft" title="Turn left" aria-label="Turn left">‹ <span>TURN LEFT</span></button>
+        <span id="wallIndicator" class="wall-indicator">WALL 1 OF 4</span>
+        <button id="turnRight" title="Turn right" aria-label="Turn right"><span>TURN RIGHT</span> ›</button>
+      </div>
+    </section>
+
+    <section class="hud" aria-label="Player information">
+      <div class="hud-label">INVENTORY <span class="hint">Select an item, then click where you want to use it.</span></div>
+      <div id="inventory" class="inventory"><span class="inventory-empty">Nothing collected yet.</span></div>
+      <div id="status" class="status" role="status" aria-live="polite">You awaken in an unfamiliar white room. Read the letter on the table.</div>
+    </section>
+
+    <footer class="footer"><span>CLICK TO EXPLORE · SOLVE IN ANY ORDER</span><span>PROGRESS SAVES IN THIS BROWSER</span></footer>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-scrim" data-close-modal></div>
+    <section class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-heading"><div><span class="eyebrow" id="modalSubtitle">LOOK CLOSER</span><h2 id="modalTitle">Inspect</h2></div><button id="modalClose" class="modal-close" aria-label="Close inspection">×</button></div>
+      <div id="modalBody" class="modal-body"></div>
+    </section>
+  </div>
+</body>
+</html>
