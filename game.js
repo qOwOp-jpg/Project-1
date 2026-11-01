@@ -3,9 +3,9 @@
 
 // Assets and puzzle settings
 
-const ASSET_DIR = 'asset/images/';
-const AUDIO_DIR = 'asset/audio/';
-const VIDEO_DIR = 'asset/media/';
+const ASSET_DIR = 'Asset/images/';
+const AUDIO_DIR = 'Asset/audio/';
+const VIDEO_DIR = 'Asset/media/';
 
 const ASSETS = {
     room: 'Room.png',
