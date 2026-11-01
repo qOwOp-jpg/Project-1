@@ -636,19 +636,21 @@ function render() {
 }
 
 function renderInventory() {
-    const items = [];
+    const items = [null, null, null];
+
 
     if (state.clockSolved) {
-        items.push(['password', 'A Folded Note', '1888']);
+        items[0] = ['password', 'A Folded Note', '1888'];
     }
 
     if (state.keyCollected && !state.keyUnlocked) {
-        items.push(['key', 'Key', '⚿']);
+        items[1] = ['key', 'Key', '⚿'];
     }
 
     if (state.axeCollected && !state.plankBroken) {
-        items.push(['axe', 'Axe', '⚒']);
+        items[2] = ['axe', 'Axe', '⚒'];
     }
+
 
     const slots = Array.from({ length: 3 }, (_, i) => {
         if (!items[i]) {
