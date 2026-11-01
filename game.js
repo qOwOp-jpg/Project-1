@@ -1334,11 +1334,6 @@ function modalWindow() {
 
 function modalAtlas() {
     return `
-        <p class="modal-text">
-            A chart of constellations.
-            Which pattern matches the stars outside?
-        </p>
-
         <div class="art-panel atlas-art">
             ${asset('atlas', 'PYXIS / CRUX / LYRA / ORION')}
         </div>
@@ -1405,9 +1400,8 @@ function modalBox() {
 
             <div>
                 <p class="modal-text">
-                    Five little letter wheels turn
-                    on the front of the box.
-                    What did you see through the window?
+                    The night has forgotten its name.<br>
+                    Five silent mouths remember.
                 </p>
 
                 ${
@@ -1440,8 +1434,8 @@ function modalBox() {
                     !state.boxSolved
                         ? `
                             <p class="puzzle-instruction">
-                                Use ▲ or ▼ to cycle through letters.
-                                The lock checks the word automatically.
+                                The wheels turn without resistance.
+                                Something within awaits the right word.
                             </p>
                         `
                         : ''
